@@ -1,0 +1,49 @@
+nss.Lang = {} or nss.Lang
+
+nss.Lang["PL"] = {
+    CashRegister = "Kasa Fiskalna",
+    MetalDetector = "Wykrywacz Metalu",
+    Add = "Wystaw na sprzedaż",
+    Disown = "Porzuć",
+    DisownAsk = "Porzucić %s?",
+    Claim = "ZABIERZ PIENIĄDZE",
+    Tax = "Podatek: %s%%",
+    Buy = "Kup %s",
+    BuyFor = "KUP za %s",
+    Weapon = "Broń: %s",
+    Amount = "Ilość: %s szt",
+    Shipment = "Skrzynka: %s",
+    CollectedNotify = "Pomyślnie zabrałeś %s z kasy fiskalnej.",
+    EnterPrice = "Wpisz cenę produktu!",
+    Confirm = "Potwierdź",
+    Cancel = "Anuluj",
+    Distance = "Odległość %sm",
+    Success = "Operacja udana!",
+    Failed = "Operacja nieudana!",
+    Ok = "OK!",
+    MaxItems = "Przedmioty: %s/%s"
+}
+
+nss.Lang["ENG"] = {
+    CashRegister = "Cash Register",
+    MetalDetector = "Metal Detector",
+    Add = "Add for sale",
+    Disown = "Disown",
+    DisownAsk = "Disown %s?",
+    Claim = "CLAIM MONEY",
+    Tax = "Tax: %s%%",
+    Buy = "Buy %s",
+    BuyFor = "BUY for %s",
+    Weapon = "Weapon: %s",
+    Amount = "Amount: %s",
+    Shipment = "Shipment: %s",
+    CollectedNotify = "You've successfully collected %s from your cash register!",
+    EnterPrice = "Enter price!",
+    Confirm = "Confirm",
+    Cancel = "Cancel",
+    Distance = "Distance %sm",
+    Success = "Operation Successfull!",
+    Failed = "Operation Failed!",
+    Ok = "OK!",
+    MaxItems = "Items: %s/%s"
+}
