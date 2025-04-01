@@ -1,20 +1,20 @@
-surface.CreateFont("nssv2-15", {font = "LEMONMILK-Regular", size = 15})
-surface.CreateFont("nssv2-20", {font = "LEMONMILK-Regular", size = 20})
-surface.CreateFont("nssv2-25", {font = "LEMONMILK-Regular", size = 25})
+surface.CreateFont("nssv2-15", {font = "Calibri", size = 15})
+surface.CreateFont("nssv2-20", {font = "Calibri", size = 20})
+surface.CreateFont("nssv2-25", {font = "Calibri", size = 25})
 surface.CreateFont("nssv2alt-25", {font = "Calibri", size = 25})
-surface.CreateFont("nssv2-30", {font = "LEMONMILK-Regular", size = 30})
+surface.CreateFont("nssv2-30", {font = "Calibri", size = 30})
 surface.CreateFont("nssv2alt-30", {font = "Calibri", size = 30})
-surface.CreateFont("nssv2-30Shadow", {font = "LEMONMILK-Regular", size = 30, shadow=true})
-surface.CreateFont("nssv2-40", {font = "LEMONMILK-Regular", size = 40})
-surface.CreateFont("nssv2-40Shadow", {font = "LEMONMILK-Regular", size = 40, shadow=true})
-surface.CreateFont("nssv2-50", {font = "LEMONMILK-Regular", size = 50})
-surface.CreateFont("nssv2-50Shadow", {font = "LEMONMILK-Regular", size = 50, shadow=true})
-surface.CreateFont("nssv2-60", {font = "LEMONMILK-Regular", size = 60})
-surface.CreateFont("nssv2-60Shadow", {font = "LEMONMILK-Regular", size = 60, shadow=true})
-surface.CreateFont("nssv2-70", {font = "LEMONMILK-Regular", size = 70})
-surface.CreateFont("nssv2-70Shadow", {font = "LEMONMILK-Regular", size = 70, shadow=true})
-surface.CreateFont("nssv2-80", {font = "LEMONMILK-Regular", size = 80})
-surface.CreateFont("nssv2-80Shadow", {font = "LEMONMILK-Regular", size = 80, shadow=true})
+surface.CreateFont("nssv2-30Shadow", {font = "Calibri", size = 30, shadow=true})
+surface.CreateFont("nssv2-40", {font = "Calibri", size = 40})
+surface.CreateFont("nssv2-40Shadow", {font = "Calibri", size = 40, shadow=true})
+surface.CreateFont("nssv2-50", {font = "Calibri", size = 50})
+surface.CreateFont("nssv2-50Shadow", {font = "Calibri", size = 50, shadow=true})
+surface.CreateFont("nssv2-60", {font = "Calibri", size = 60})
+surface.CreateFont("nssv2-60Shadow", {font = "Calibri", size = 60, shadow=true})
+surface.CreateFont("nssv2-70", {font = "Calibri", size = 70})
+surface.CreateFont("nssv2-70Shadow", {font = "Calibri", size = 70, shadow=true})
+surface.CreateFont("nssv2-80", {font = "Calibri", size = 80})
+surface.CreateFont("nssv2-80Shadow", {font = "Calibri", size = 80, shadow=true})
 
 nssv2.ClientData = nssv2.ClientData or {}
 
@@ -805,9 +805,16 @@ function nssv2:OpenCashRegisterGUI(cashRegister,itemsForSale,stats,metalDetector
                 local moneyInfo = frame.mainPanel.moneyPanel.money
                 moneyInfo:Dock(FILL)
                 moneyInfo.Paint = function(s,w,h)
-                    draw.SimpleText(DarkRP.formatMoney(cashRegister:GetMoney()),"nssv2-40",w*.5,0,nssv2.guiColors.text.positive,TEXT_ALIGN_CENTER,TEXT_ALIGN_TOP)
-                    draw.SimpleText(nssv2:GetPhrase("Tax",nssv2.Config.Tax*100),"nssv2-20",w*.5,40,nssv2.guiColors.text.primary,TEXT_ALIGN_CENTER,TEXT_ALIGN_TOP)
-                    draw.SimpleText(nssv2:GetPhrase("TaxInfo"),"nssv2-15",w*.5,55,nssv2.guiColors.text.primary,TEXT_ALIGN_CENTER,TEXT_ALIGN_TOP)
+                    if nssv2.Config.Tax > 0 then
+                        draw.SimpleText(nssv2:GetPhrase("Tax",nssv2.Config.Tax*100),"nssv2-20",w*.5,40,nssv2.guiColors.text.primary,TEXT_ALIGN_CENTER,TEXT_ALIGN_TOP)
+                        draw.SimpleText(nssv2:GetPhrase("TaxInfo"),"nssv2-15",w*.5,55,nssv2.guiColors.text.primary,TEXT_ALIGN_CENTER,TEXT_ALIGN_TOP)
+                        draw.SimpleText(DarkRP.formatMoney(cashRegister:GetMoney()),"nssv2-40",w*.5,0,nssv2.guiColors.text.positive,TEXT_ALIGN_CENTER,TEXT_ALIGN_TOP)
+                    
+                    else
+                        draw.SimpleText(DarkRP.formatMoney(cashRegister:GetMoney()),"nssv2-60",w*.5,0,nssv2.guiColors.text.positive,TEXT_ALIGN_CENTER,TEXT_ALIGN_TOP)
+                    
+                    end
+
                 end
 
 

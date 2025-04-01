@@ -66,7 +66,8 @@ c.SellableEntities["spawned_shipment"] = {
     sellFunction = function(entity) return end,
     TypeName = "Shipment",
     CustomName = function(entity)
-        return entity:Getcount().."x "..CustomShipments[entity:Getcontents()].name
+        local count = entity:Getcount()
+        return count.."x "..CustomShipments[entity:Getcontents()].name
     end,
     Draw3D2D = function(entity)
         local shopColor = entity:GetOwner():GetShopColor():ToColor() or nssv2.guiColors.accentColor   // have to cast it to Color using ToColor() function, cuz we're storing it as a Vector due to limitations
